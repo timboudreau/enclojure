@@ -10,7 +10,9 @@ Big Honkin' Caveats
 -------------------
 
 This module cannot coexist with NetBeans Hibernate support, due to a conflict
-over SLF4J.  So, disable SLF4J before you try to use this module.
+over SLF4J.  So, disable hibernate before you try to use this module. This is probably
+solvable, but would probably require changes in NetBeans Hibernate module to split
+out SLF4J into a wrapper both could depend on.
 
 There are other issues - the naive approach to integrating a scripting
 language into an IDE is to load up user code inside the IDE's VM.  In practice
