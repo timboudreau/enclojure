@@ -45,7 +45,7 @@
             <artifactId>clojure-contrib</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.enclojure</groupId>
+            <groupId>${project.groupId}</groupId>
             <artifactId>org-enclojure-commons</artifactId>
             <version>1.5</version>
             <exclusions>
@@ -56,15 +56,15 @@
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>org.enclojure</groupId>
+            <groupId>${project.groupId}</groupId>
             <artifactId>org-enclojure-repl-server</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.enclojure</groupId>
+            <groupId>${project.groupId}</groupId>
             <artifactId>org-enclojure-repl-client</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.enclojure</groupId>
+            <groupId>${project.groupId}</groupId>
             <artifactId>org-enclojure-ide</artifactId>
         </dependency>
         <dependency>

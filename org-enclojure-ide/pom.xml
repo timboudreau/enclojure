@@ -11,15 +11,15 @@
     <name>org-enclojure-ide</name>
     <dependencies>
         <dependency>
-            <groupId>org.enclojure</groupId>
+            <groupId>${project.groupId}</groupId>
             <artifactId>org-enclojure-commons</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.enclojure</groupId>
+            <groupId>${project.groupId}</groupId>
             <artifactId>org-enclojure-repl-server</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.enclojure</groupId>
+            <groupId>${project.groupId}</groupId>
             <artifactId>org-enclojure-repl-client</artifactId>
         </dependency>
         <dependency>
