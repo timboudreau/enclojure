@@ -4,7 +4,7 @@ Enclojure
 This project is a fork of Eric Thorsen's [original Enclojure project](https://github.com/EricThorsen/enclojure).  I have got it building and working on
 NetBeans 7.3.
 
-Builds are available [on timboudreau.com](http://timboudreau.com/builds/Enclojure).
+Builds are available [on timboudreau.com](http://timboudreau.com/builds/job/Enclojure).
 
 Big Honkin' Caveats
 -------------------
