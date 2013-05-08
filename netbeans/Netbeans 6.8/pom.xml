@@ -16,41 +16,34 @@
             <groupId>org.netbeans.cluster</groupId>
             <artifactId>websvccommon</artifactId>
             <type>pom</type>
-            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.cluster</groupId>
             <artifactId>platform</artifactId>
             <type>pom</type>
-            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.cluster</groupId>
             <artifactId>ide</artifactId>
             <type>pom</type>
-            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.cluster</groupId>
             <artifactId>nb</artifactId>
             <type>pom</type>
-            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.cluster</groupId>
             <artifactId>java</artifactId>
             <type>pom</type>
-            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.enclojure</groupId>
             <artifactId>org-enclojure-plugin</artifactId>
-            <version>1.5</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.modules</groupId>
             <artifactId>org-netbeans-modules</artifactId>
-            <version>${netbeans.version}</version>
         </dependency>
     </dependencies>
     <build>
