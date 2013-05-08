@@ -7,10 +7,8 @@
         <groupId>org.enclojure</groupId>
         <version>1.6</version>
     </parent>
-    <groupId>org.enclojure</groupId>
     <artifactId>org-enclojure-ide</artifactId>
     <name>org-enclojure-ide</name>
-    <url>http://maven.apache.org</url>
     <dependencies>
         <dependency>
             <groupId>org.enclojure</groupId>
@@ -30,7 +28,7 @@
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-modules-lexer</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -41,12 +39,12 @@
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-openide-util-lookup</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-jdesktop-beansbinding</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
     </dependencies>
 </project>

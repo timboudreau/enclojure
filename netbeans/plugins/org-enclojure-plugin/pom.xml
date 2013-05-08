@@ -2,7 +2,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.enclojure</groupId>
     <artifactId>org-enclojure-plugin</artifactId>
     <packaging>nbm</packaging>
     <version>1.6</version>
@@ -17,7 +16,6 @@
     <properties>
         <clojure.snapshot.tag/>
         <clojure.contrib.snapshot.tag/>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <netbeans.release>RELEASE73</netbeans.release>
         <brandingToken>enclojure</brandingToken>
         <enclojure.version.dev>1.0-SNAPSHOT</enclojure.version.dev>
@@ -32,33 +30,6 @@
         <sample.projects.dest/>
         <netbeans.release>RELEASE73</netbeans.release>
     </properties>
-
-    <repositories>
-        <repository>
-            <id>netbeans</id>
-            <name>repository hosting netbeans.org api artifacts</name>
-            <url>http://bits.netbeans.org/maven2</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-    <repository>
-      <id>clojure-releases</id>
-      <url>http://build.clojure.org/releases</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
-        <repository>
-            <url>http://download.java.net/maven/2/</url>
-            <id>beans-binding</id>
-            <layout>default</layout>
-            <name>Repository for library Library[beans-binding]</name>
-        </repository>
-    </repositories>
     <dependencies>
         <dependency>
             <groupId>com.github.technomancy</groupId>
@@ -75,281 +46,278 @@
                 </exclusion>
             </exclusions>
         </dependency>
-            <dependency>
-              <groupId>com.sun</groupId>
-              <artifactId>tools</artifactId>
-              <version>${java.version}</version>
-              <scope>system</scope>
-              <!--<systemPath>/opt/oracle-jdk-bin-1.7.0.21/lib/tools.jar</systemPath>-->
-              <systemPath>${java.home}/../lib/tools.jar</systemPath>
-            </dependency>
-            
         <dependency>
-          <groupId>org.clojure</groupId>
-          <artifactId>clojure</artifactId>
-          <version>${clojure.version}</version>
+            <groupId>com.sun</groupId>
+            <artifactId>tools</artifactId>
+            <version>${java.version}</version>
+            <scope>system</scope>
+            <!--<systemPath>/opt/oracle-jdk-bin-1.7.0.21/lib/tools.jar</systemPath>-->
+            <systemPath>${java.home}/../lib/tools.jar</systemPath>
         </dependency>
         <dependency>
-          <groupId>org.clojure</groupId>
-          <artifactId>clojure-contrib</artifactId>
-          <version>${clojure.version}</version>
+            <groupId>org.clojure</groupId>
+            <artifactId>clojure</artifactId>
+            <version>${clojure.version}</version>
         </dependency>
-          <dependency>
-              <groupId>org.enclojure</groupId>
-              <artifactId>org-enclojure-commons</artifactId>
-              <version>1.5</version>
-               <exclusions>
-                    <exclusion>
-                         <artifactId>slf4j-api</artifactId>
-                         <groupId>org.slf4j</groupId>
-                    </exclusion>
-               </exclusions>
-          </dependency>
         <dependency>
-          <groupId>org.enclojure</groupId>
-        <artifactId>org-enclojure-repl-server</artifactId>
-        <version>1.5</version>
+            <groupId>org.clojure</groupId>
+            <artifactId>clojure-contrib</artifactId>
+            <version>${clojure.version}</version>
         </dependency>
-	<dependency>
-	   <groupId>org.enclojure</groupId>
-	   <artifactId>org-enclojure-repl-client</artifactId>
-	   <version>1.5</version>
-	</dependency>
         <dependency>
-	   <groupId>org.enclojure</groupId>
-	   <artifactId>org-enclojure-ide</artifactId>
-	   <version>1.5</version>
-	</dependency>
+            <groupId>org.enclojure</groupId>
+            <artifactId>org-enclojure-commons</artifactId>
+            <version>1.5</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>slf4j-api</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.enclojure</groupId>
+            <artifactId>org-enclojure-repl-server</artifactId>
+            <version>1.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.enclojure</groupId>
+            <artifactId>org-enclojure-repl-client</artifactId>
+            <version>1.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.enclojure</groupId>
+            <artifactId>org-enclojure-ide</artifactId>
+            <version>1.5</version>
+        </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-api-debugger</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-api-debugger-jpda</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-spi-debugger-ui</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-api-java-classpath</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-modules-java-platform</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-modules-java-project</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-modules-editor</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-modules-editor-completion</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-openide-util</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-openide-filesystems</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-openide-modules</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-spi-viewmodel</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-openide-awt</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-openide-dialogs</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-openide-nodes</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-openide-windows</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-openide-loaders</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-modules-editor-mimelookup</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-openide-text</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-modules-editor-lib</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-modules-editor-fold</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-modules-projectapi</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-modules-projectuiapi</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-openide-execution</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-apache-tools-ant-module</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-modules-options-api</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-spi-navigator</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-modules-project-ant</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-modules-editor-indent</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-core-multiview</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-modules-autoupdate-services</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-modules-csl-api</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-modules-editor-bracesmatching</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-modules-editor-codetemplates</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-modules-editor-errorstripe-api</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-modules-editor-guards</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-modules-editor-lib2</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-modules-java-source</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-modules-java-sourceui</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-modules-refactoring-api</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-spi-editor-hints</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-openide-explorer</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
-        
         <dependency>
             <groupId>org.netbeans.external</groupId>
             <artifactId>beansbinding-1.2.1</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
-        
         <dependency>
             <artifactId>org-netbeans-modules-project-libraries</artifactId>
             <groupId>org.netbeans.api</groupId>
             <type>jar</type>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
-<!--        <dependency>
+        <!--        <dependency>
             <artifactId>mail</artifactId>
             <groupId>javax.mail</groupId>
             <type>jar</type>
             <version>1.4</version>
         </dependency>-->
-<!--        <dependency>
+        <!--        <dependency>
             <artifactId>javac-api-nb-7.0-b07</artifactId>
             <groupId>org.netbeans.external</groupId>
             <type>jar</type>
@@ -359,13 +327,13 @@
             <artifactId>resolver-1.2</artifactId>
             <groupId>org.netbeans.external</groupId>
             <type>jar</type>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <artifactId>org-openidex-util</artifactId>
             <groupId>org.netbeans.api</groupId>
             <type>jar</type>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.external</groupId>
@@ -377,27 +345,26 @@
             <artifactId>updater</artifactId>
             <groupId>org.netbeans.external</groupId>
             <type>jar</type>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
-<!--        <dependency>
+        <!--        <dependency>
             <groupId>org.netbeans.external</groupId>
             <artifactId>script-api</artifactId>
             <type>jar</type>
             <version>RELEASE68</version>
         </dependency>-->
-<!--        <dependency>
+        <!--        <dependency>
             <artifactId>slf4j-api</artifactId>
             <groupId>org.slf4j</groupId>
             <type>jar</type>
             <version>1.7.5</version>
         </dependency>-->
-<!--        <dependency>
+        <!--        <dependency>
             <artifactId>slf4j-jdk14</artifactId>
             <groupId>org.slf4j</groupId>
             <type>jar</type>
             <version>1.7.5</version>
         </dependency>-->
-        
         <dependency>
             <artifactId>activation</artifactId>
             <groupId>javax.activation</groupId>
@@ -407,122 +374,122 @@
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-modules-lexer</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-modules-editor-util</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-swing-outline</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-api-progress</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-modules-queries</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-openide-actions</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-modules-editor-settings</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-openide-io</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-api-java</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-api-xml</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-spi-quicksearch</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-api-annotations-common</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-modules-classfile</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-modules-xml-catalog</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-apache-xml-resolver</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-swing-tabcontrol</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-libs-lucene</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-modules-javahelp</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-spi-tasklist</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-libs-javacapi</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-modules-java-lexer</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-modules-parsing-api</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-openide-util-lookup</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-jdesktop-beansbinding</artifactId>
-            <version>RELEASE73</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -530,17 +497,15 @@
             <version>1.7.5</version>
         </dependency>
     </dependencies>
-
     <build>
-      <resources>
-        <resource>
-            <directory>src/main/clojure</directory>
-        </resource>
-
-        <resource>
-            <directory>src/main/resources</directory>
-        </resource>
-        <!-- this is the project template from the templates directory
+        <resources>
+            <resource>
+                <directory>src/main/clojure</directory>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+            <!-- this is the project template from the templates directory
         <resource>
            <directory>../../../templates/netbeans/target</directory>
             <includes>
@@ -549,180 +514,164 @@
             <targetPath>org/enclojure/ide/templates/project</targetPath>
         </resource>
         -->
-        <resource>
-           <directory>src/main/java/org/enclojure/ide/nb/editor</directory>
-            <includes>
-                <include>**/*.xml</include>
-                <include>**/*.html</include>
-                <include>Bundle.properties</include>
-                <include>**/*.png</include>
-                <include>**/*.gif</include>
-            </includes>
-            <targetPath>org/enclojure/ide/nb/editor</targetPath>
-        </resource>
-
-        <resource>
-           <directory>src/main/java/org/enclojure/ide/debugger</directory>
-            <includes>
-                <include>**/*.xml</include>
-                <include>**/*.html</include>
-                <include>Bundle.properties</include>
-                <include>**/*.png</include>
-                <include>**/*.gif</include>
-            </includes>
-            <targetPath>org/enclojure/ide/debugger</targetPath>
-        </resource>
-
-        <resource>
-           <directory>src/main/java/org/enclojure/ide/debugger/actions</directory>
-            <includes>
-                <include>**/*.xml</include>
-                <include>**/*.html</include>
-                <include>Bundle.properties</include>
-                <include>**/*.png</include>
-                <include>**/*.gif</include>
-            </includes>
-            <targetPath>org/enclojure/ide/debugger/actions</targetPath>
-        </resource>
-
-        <resource>
-           <directory>src/main/java/org/enclojure/ide/debugger/breakpoints</directory>
-            <includes>
-                <include>**/*.xml</include>
-                <include>**/*.html</include>
-                <include>Bundle.properties</include>
-                <include>**/*.png</include>
-                <include>**/*.gif</include>
-            </includes>
-            <targetPath>org/enclojure/ide/debugger/breakpoints</targetPath>
-        </resource>
-
-
-        <resource>
-           <directory>src/main/java/org/enclojure/ide/debugger/resources</directory>
-            <includes>
-                <include>**/*.xml</include>
-                <include>**/*.html</include>
-                <include>Bundle.properties</include>
-                <include>**/*.png</include>
-                <include>**/*.gif</include>
-            </includes>
-            <targetPath>org/enclojure/ide/debugger/resources</targetPath>
-        </resource>
-
-        <resource>
-           <directory>src/main/java/org/enclojure/ide/debugger/variablesFiltering</directory>
-            <includes>
-                <include>Bundle.properties</include>
-            </includes>
-            <targetPath>org/enclojure/ide/debugger/variablesFiltering</targetPath>
-        </resource>
-
-        <resource>
-           <directory>src/main/java/org/enclojure/ide/debugger/watchesFiltering</directory>
-            <includes>
-                <include>Bundle.properties</include>
-            </includes>
-            <targetPath>org/enclojure/ide/debugger/watchesFiltering</targetPath>
-        </resource>
-
-        <resource>
-           <directory>src/main/java/org/enclojure/ide/navigator/resources</directory>
-            <includes>
-                <include>**/*.xml</include>
-                <include>**/*.html</include>
-                <include>Bundle.properties</include>
-                <include>**/*.png</include>
-                <include>**/*.gif</include>
-            </includes>
-            <targetPath>org/enclojure/ide/navigator/resources</targetPath>
-        </resource>
-
-         <resource>
-           <directory>src/main/java/org/enclojure/ide/preferences</directory>
-            <includes>
-                <include>Bundle.properties</include>
-            </includes>
-            <targetPath>org/enclojure/ide/preferences</targetPath>
-        </resource>
-
-        <resource>
-           <directory>src/main/java/org/enclojure/ide/nb/actions</directory>
-            <includes>
-                <include>**/*.xml</include>
-                <include>**/*.html</include>
-                <include>Bundle.properties</include>
-                <include>**/*.png</include>
-                <include>**/*.gif</include>
-            </includes>
-            <targetPath>org/enclojure/ide/nb/actions</targetPath>
-        </resource>
-
-
-        <resource>
-           <directory>src/main/java/org/enclojure/ide/nb/clojure/project</directory>
-            <includes>
-                <include>**/*.xml</include>
-                <include>**/*.html</include>
-                <include>Bundle.properties</include>
-                <include>**/*.png</include>
-                <include>**/*.gif</include>
-            </includes>
-            <targetPath>org/enclojure/ide/nb/clojure/project</targetPath>
-        </resource>
-
-
-        <resource>
-           <directory>src/main/java/org/enclojure/ide/nb/editor</directory>
-            <includes>
-                <include>**/*.xml</include>
-                <include>**/*.html</include>
-                <include>Bundle.properties</include>
-                <include>**/*.png</include>
-                <include>**/*.gif</include>
-            </includes>
-            <targetPath>org/enclojure/ide/nb/editor</targetPath>
-        </resource>
-
-        <resource>
-           <directory>src/main/java/org/enclojure/ide/nb/editor/platforms</directory>
-            <includes>
-                <include>**/*.xml</include>
-                <include>**/*.html</include>
-                <include>Bundle.properties</include>
-                <include>**/*.png</include>
-                <include>**/*.gif</include>
-                <include>**/*.zip</include>
-            </includes>
-            <targetPath>org/enclojure/ide/nb/editor/platforms</targetPath>
-        </resource>
-        <resource>
-           <directory>src/main/java/org/enclojure/ide/nb/editor/resources</directory>
-            <includes>                <include>**/*.xml</include>
-                <include>**/*.html</include>
-                <include>Bundle.properties</include>
-                <include>**/*.png</include>
-                <include>**/*.gif</include>
-                <include>**/*.clj</include>
-            </includes>
-            <targetPath>org/enclojure/ide/nb/editor/resources</targetPath>
-        </resource>
-        <resource>
-           <directory>src/main/java/org/enclojure/ide/nb/source</directory>
-            <includes>
-                <include>**/*.xml</include>
-                <include>**/*.html</include>
-                <include>Bundle.properties</include>
-                <include>**/*.png</include>
-                <include>**/*.gif</include>
-            </includes>
-            <targetPath>org/enclojure/ide/nb/source</targetPath>
-        </resource>
-
-    </resources>
-    <plugins>
-
-        <!--<plugin>
+            <resource>
+                <directory>src/main/java/org/enclojure/ide/nb/editor</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                    <include>**/*.html</include>
+                    <include>Bundle.properties</include>
+                    <include>**/*.png</include>
+                    <include>**/*.gif</include>
+                </includes>
+                <targetPath>org/enclojure/ide/nb/editor</targetPath>
+            </resource>
+            <resource>
+                <directory>src/main/java/org/enclojure/ide/debugger</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                    <include>**/*.html</include>
+                    <include>Bundle.properties</include>
+                    <include>**/*.png</include>
+                    <include>**/*.gif</include>
+                </includes>
+                <targetPath>org/enclojure/ide/debugger</targetPath>
+            </resource>
+            <resource>
+                <directory>src/main/java/org/enclojure/ide/debugger/actions</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                    <include>**/*.html</include>
+                    <include>Bundle.properties</include>
+                    <include>**/*.png</include>
+                    <include>**/*.gif</include>
+                </includes>
+                <targetPath>org/enclojure/ide/debugger/actions</targetPath>
+            </resource>
+            <resource>
+                <directory>src/main/java/org/enclojure/ide/debugger/breakpoints</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                    <include>**/*.html</include>
+                    <include>Bundle.properties</include>
+                    <include>**/*.png</include>
+                    <include>**/*.gif</include>
+                </includes>
+                <targetPath>org/enclojure/ide/debugger/breakpoints</targetPath>
+            </resource>
+            <resource>
+                <directory>src/main/java/org/enclojure/ide/debugger/resources</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                    <include>**/*.html</include>
+                    <include>Bundle.properties</include>
+                    <include>**/*.png</include>
+                    <include>**/*.gif</include>
+                </includes>
+                <targetPath>org/enclojure/ide/debugger/resources</targetPath>
+            </resource>
+            <resource>
+                <directory>src/main/java/org/enclojure/ide/debugger/variablesFiltering</directory>
+                <includes>
+                    <include>Bundle.properties</include>
+                </includes>
+                <targetPath>org/enclojure/ide/debugger/variablesFiltering</targetPath>
+            </resource>
+            <resource>
+                <directory>src/main/java/org/enclojure/ide/debugger/watchesFiltering</directory>
+                <includes>
+                    <include>Bundle.properties</include>
+                </includes>
+                <targetPath>org/enclojure/ide/debugger/watchesFiltering</targetPath>
+            </resource>
+            <resource>
+                <directory>src/main/java/org/enclojure/ide/navigator/resources</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                    <include>**/*.html</include>
+                    <include>Bundle.properties</include>
+                    <include>**/*.png</include>
+                    <include>**/*.gif</include>
+                </includes>
+                <targetPath>org/enclojure/ide/navigator/resources</targetPath>
+            </resource>
+            <resource>
+                <directory>src/main/java/org/enclojure/ide/preferences</directory>
+                <includes>
+                    <include>Bundle.properties</include>
+                </includes>
+                <targetPath>org/enclojure/ide/preferences</targetPath>
+            </resource>
+            <resource>
+                <directory>src/main/java/org/enclojure/ide/nb/actions</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                    <include>**/*.html</include>
+                    <include>Bundle.properties</include>
+                    <include>**/*.png</include>
+                    <include>**/*.gif</include>
+                </includes>
+                <targetPath>org/enclojure/ide/nb/actions</targetPath>
+            </resource>
+            <resource>
+                <directory>src/main/java/org/enclojure/ide/nb/clojure/project</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                    <include>**/*.html</include>
+                    <include>Bundle.properties</include>
+                    <include>**/*.png</include>
+                    <include>**/*.gif</include>
+                </includes>
+                <targetPath>org/enclojure/ide/nb/clojure/project</targetPath>
+            </resource>
+            <resource>
+                <directory>src/main/java/org/enclojure/ide/nb/editor</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                    <include>**/*.html</include>
+                    <include>Bundle.properties</include>
+                    <include>**/*.png</include>
+                    <include>**/*.gif</include>
+                </includes>
+                <targetPath>org/enclojure/ide/nb/editor</targetPath>
+            </resource>
+            <resource>
+                <directory>src/main/java/org/enclojure/ide/nb/editor/platforms</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                    <include>**/*.html</include>
+                    <include>Bundle.properties</include>
+                    <include>**/*.png</include>
+                    <include>**/*.gif</include>
+                    <include>**/*.zip</include>
+                </includes>
+                <targetPath>org/enclojure/ide/nb/editor/platforms</targetPath>
+            </resource>
+            <resource>
+                <directory>src/main/java/org/enclojure/ide/nb/editor/resources</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                    <include>**/*.html</include>
+                    <include>Bundle.properties</include>
+                    <include>**/*.png</include>
+                    <include>**/*.gif</include>
+                    <include>**/*.clj</include>
+                </includes>
+                <targetPath>org/enclojure/ide/nb/editor/resources</targetPath>
+            </resource>
+            <resource>
+                <directory>src/main/java/org/enclojure/ide/nb/source</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                    <include>**/*.html</include>
+                    <include>Bundle.properties</include>
+                    <include>**/*.png</include>
+                    <include>**/*.gif</include>
+                </includes>
+                <targetPath>org/enclojure/ide/nb/source</targetPath>
+            </resource>
+        </resources>
+        <plugins>
+            <!--<plugin>
             <artifactId>maven-antrun-plugin</artifactId>
             <version>1.4</version>
             <executions>                
@@ -750,48 +699,48 @@
               </execution>
             </executions>
       </plugin>-->
-     <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>exec-maven-plugin</artifactId>
-        <version>1.1</version>
-        <executions>
-          <execution>
-            <id>exec-zip-projects</id>
-            <phase>validate</phase>
-            <goals>
-              <goal>exec</goal>
-            </goals>
-            <configuration>
-              <executable>java</executable>
-              <!-- optional -->
-              <arguments>
-                <argument>-cp</argument>
-                <classpath/>
-                <argument>clojure.main</argument>
-                <argument>${basedir}/scripts/zip_projects.clj</argument>
-              </arguments>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>com.theoryinpractise</groupId>
-        <artifactId>clojure-maven-plugin</artifactId>
-        <version>1.3.15</version>
-        <configuration>
-          <compileDeclaredNamespaceOnly>true</compileDeclaredNamespaceOnly>
-              <namespaces>
-                <namespace>org.\enclojure\.ide\.common\.error-reporting</namespace>
-          </namespaces>
-        </configuration>
-        <dependencies>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>1.7.5</version>
-        </dependency>            
-        </dependencies>
-      </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.1</version>
+                <executions>
+                    <execution>
+                        <id>exec-zip-projects</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>java</executable>
+                            <!-- optional -->
+                            <arguments>
+                                <argument>-cp</argument>
+                                <classpath/>
+                                <argument>clojure.main</argument>
+                                <argument>${basedir}/scripts/zip_projects.clj</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.theoryinpractise</groupId>
+                <artifactId>clojure-maven-plugin</artifactId>
+                <version>1.3.15</version>
+                <configuration>
+                    <compileDeclaredNamespaceOnly>true</compileDeclaredNamespaceOnly>
+                    <namespaces>
+                        <namespace>org.\enclojure\.ide\.common\.error-reporting</namespace>
+                    </namespaces>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.slf4j</groupId>
+                        <artifactId>slf4j-api</artifactId>
+                        <version>1.7.5</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>nbm-maven-plugin</artifactId>
@@ -830,23 +779,23 @@
     </build>
     <profiles>
         <profile>
-          <id>default-tools.jar</id>
-          <activation>
-            <property>
-              <name>java.vendor</name>
-              <value>Sun Microsystems Inc.</value>
-            </property>
-          </activation>
-          <dependencies>
-            <dependency>
-              <groupId>com.sun</groupId>
-              <artifactId>tools</artifactId>
-              <version>${java.version}</version>
-              <scope>system</scope>
-              <!--<systemPath>/opt/oracle-jdk-bin-1.7.0.21/lib/tools.jar</systemPath>-->
-              <systemPath>${java.home}/../lib/tools.jar</systemPath>
-            </dependency>
-          </dependencies>
+            <id>default-tools.jar</id>
+            <activation>
+                <property>
+                    <name>java.vendor</name>
+                    <value>Sun Microsystems Inc.</value>
+                </property>
+            </activation>
+            <dependencies>
+                <dependency>
+                    <groupId>com.sun</groupId>
+                    <artifactId>tools</artifactId>
+                    <version>${java.version}</version>
+                    <scope>system</scope>
+                    <!--<systemPath>/opt/oracle-jdk-bin-1.7.0.21/lib/tools.jar</systemPath>-->
+                    <systemPath>${java.home}/../lib/tools.jar</systemPath>
+                </dependency>
+            </dependencies>
         </profile>
         <profile>
             <id>deployment</id>
@@ -864,7 +813,7 @@
                                     <goal>autoupdate</goal>
                                 </goals>
                                 <configuration>
-                            		<!-- ><distBase>central::default::http://thortech-solutions.com/org/enclojure</distBase> -->
+                                    <!-- ><distBase>central::default::http://thortech-solutions.com/org/enclojure</distBase> -->
                                 </configuration>
                             </execution>
                         </executions>

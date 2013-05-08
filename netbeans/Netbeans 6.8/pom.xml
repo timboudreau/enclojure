@@ -15,45 +15,43 @@
         <dependency>
             <groupId>org.netbeans.cluster</groupId>
             <artifactId>websvccommon</artifactId>
-            <version>RELEASE73</version>
             <type>pom</type>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.cluster</groupId>
             <artifactId>platform</artifactId>
-            <version>RELEASE73</version>
             <type>pom</type>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.cluster</groupId>
             <artifactId>ide</artifactId>
-            <version>RELEASE73</version>
             <type>pom</type>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.cluster</groupId>
             <artifactId>nb</artifactId>
-            <version>RELEASE73</version>
             <type>pom</type>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.cluster</groupId>
             <artifactId>java</artifactId>
-            <version>RELEASE73</version>
             <type>pom</type>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.enclojure</groupId>
             <artifactId>org-enclojure-plugin</artifactId>
             <version>1.5</version>
-            <type>nbm</type>
         </dependency>
         <dependency>
             <groupId>org.netbeans.modules</groupId>
             <artifactId>org-netbeans-modules</artifactId>
-            <version>1.5</version>
-            <type>nbm</type>
-        </dependency>        
+            <version>${netbeans.version}</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -81,7 +79,7 @@
                                     <goal>autoupdate</goal>
                                 </goals>
                                 <configuration>
-                            <!--distBase>central::default::http://repo1.maven.org/maven2</distBase-->
+                                    <!--distBase>central::default::http://repo1.maven.org/maven2</distBase-->
                                 </configuration>
                             </execution>
                             <execution>

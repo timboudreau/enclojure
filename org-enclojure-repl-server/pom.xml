@@ -7,10 +7,8 @@
         <groupId>org.enclojure</groupId>
         <version>1.6</version>
     </parent>
-    <groupId>org.enclojure</groupId>
     <artifactId>org-enclojure-repl-server</artifactId>
     <name>org-enclojure-repl-server</name>
-    <url>http://maven.apache.org</url>
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
