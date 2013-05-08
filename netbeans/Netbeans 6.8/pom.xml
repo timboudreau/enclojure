@@ -10,50 +10,57 @@
     <artifactId>netbeans-enclojure-app</artifactId>
     <packaging>nbm-application</packaging>
     <version>1.a</version>
-    <name>NetBeans 6.8 with Enclojure plugin</name>
+    <name>NetBeans 7.3 with Enclojure plugin</name>
     <dependencies>
         <dependency>
             <groupId>org.netbeans.cluster</groupId>
-            <artifactId>websvccommon1</artifactId>
-            <version>RELEASE69</version>
+            <artifactId>websvccommon</artifactId>
+            <version>RELEASE73</version>
             <type>pom</type>
         </dependency>
         <dependency>
             <groupId>org.netbeans.cluster</groupId>
-            <artifactId>platform11</artifactId>
-            <version>RELEASE69</version>
+            <artifactId>platform</artifactId>
+            <version>RELEASE73</version>
             <type>pom</type>
         </dependency>
         <dependency>
             <groupId>org.netbeans.cluster</groupId>
-            <artifactId>ide12</artifactId>
-            <version>RELEASE69</version>
+            <artifactId>ide</artifactId>
+            <version>RELEASE73</version>
             <type>pom</type>
         </dependency>
         <dependency>
             <groupId>org.netbeans.cluster</groupId>
-            <artifactId>nb6.8</artifactId>
-            <version>RELEASE69</version>
+            <artifactId>nb</artifactId>
+            <version>RELEASE73</version>
             <type>pom</type>
         </dependency>
         <dependency>
             <groupId>org.netbeans.cluster</groupId>
             <artifactId>java</artifactId>
-            <version>RELEASE69</version>
+            <version>RELEASE73</version>
             <type>pom</type>
         </dependency>
         <dependency>
             <groupId>org.enclojure</groupId>
             <artifactId>org-enclojure-plugin</artifactId>
-            <version>1.1</version>
+            <version>1.5</version>
             <type>nbm</type>
         </dependency>
+        <dependency>
+            <groupId>org.netbeans.modules</groupId>
+            <artifactId>org-netbeans-modules</artifactId>
+            <version>1.5</version>
+            <type>nbm</type>
+        </dependency>        
     </dependencies>
     <build>
         <plugins>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>nbm-maven-plugin</artifactId>
+                <version>3.10</version>
             </plugin>
         </plugins>
     </build>
@@ -65,6 +72,7 @@
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>nbm-maven-plugin</artifactId>
+                        <version>3.10</version>
                         <executions>
                             <execution>
                                 <id>updatesite</id>

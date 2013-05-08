@@ -27,8 +27,8 @@ import clojure.lang.Symbol;
 import java.util.logging.Logger;
 import java.util.logging.Level;
 import org.enclojure.ide.core.LogAdapter;
-import org.enclojure.ide.repl.ReplPanel;
 import org.openide.modules.ModuleInstall;
+import org.openide.util.Lookup;
 
 /**
  * Manages a module's lifecycle. Remember that an installer is optional and
@@ -38,6 +38,7 @@ public class Installer extends ModuleInstall {
 
     private static final LogAdapter LOG = new LogAdapter(Installer.class.getName());
 
+    
     Logger etlog = Logger.getLogger("enclojure-installer");
 
     final Var requireFn = RT.var("clojure.core","require");
@@ -46,6 +47,10 @@ public class Installer extends ModuleInstall {
 
     @Override
     public void restored() {
+//        ClassLoader cl = Lookup.getDefault().lookup(ClassLoader.class);
+//        Var.pushThreadBindings(RT.map(clojure.lang.Compiler.LOADER, cl));
+        Var.pushThreadBindings(RT.map(clojure.lang.Compiler.LOADER, Thread.currentThread().getContextClassLoader()));
+        
         etlog.log(Level.INFO,"Enclojure Starting the installer script stuff");
         try {
 

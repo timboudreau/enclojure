@@ -48,6 +48,7 @@
 */
 package org.enclojure.ide.debugger;
 
+import java.beans.PropertyChangeEvent;
 import java.util.ArrayList;
 import java.util.List;
 import java.beans.PropertyChangeListener;
@@ -62,6 +63,7 @@ import org.openide.util.Lookup;
 import org.openide.util.RequestProcessor;
 
 import org.netbeans.spi.debugger.jpda.EditorContext;
+import org.openide.util.WeakListeners;
 @SuppressWarnings("unchecked") 
 public class CljEditorContextImpl extends EditorContext {
 
@@ -82,11 +84,26 @@ public class CljEditorContextImpl extends EditorContext {
 
     private EditorCookie currentEditorCookie = null;
     public EditorContext _proxy = null;
+    
+    private PropertyChangeSupport supp = new PropertyChangeSupport(this);
 
     public CljEditorContextImpl() {
     }
+    
+    void attach(EditorContext proxy) {
+       proxy.addPropertyChangeListener(WeakListeners.propertyChange(lis, proxy));
+    }
+    
+    private final PropertyChangeListener lis = new PropertyChangeListener() {
 
-    public EditorContext proxy()  {
+        @Override
+        public void propertyChange(PropertyChangeEvent pce) {
+            supp.firePropertyChange(pce.getPropertyName(), pce.getOldValue(), pce.getNewValue());
+        }
+        
+    };
+
+    public synchronized EditorContext proxy()  {
         if (_proxy == null) {
             List l = DebuggerManager.getDebuggerManager().lookup(null, EditorContext.class);
             List notme = new ArrayList();
@@ -113,6 +130,7 @@ public class CljEditorContextImpl extends EditorContext {
                         _proxy);
                 }
             }
+            attach(_proxy);
         }
         return _proxy;
     }
@@ -376,7 +394,8 @@ public class CljEditorContextImpl extends EditorContext {
      * @return URL of source currently selected in editor or empty string
      */
     public String getCurrentURL() {
-        return proxy().getCurrentURL();
+        EditorContext proxy = proxy();
+        return proxy == null ? null : proxy.getCurrentURL();
     }
 
     /**
@@ -501,7 +520,7 @@ public class CljEditorContextImpl extends EditorContext {
      * @param l the listener to add
      */
     public void addPropertyChangeListener(PropertyChangeListener l) {
-        proxy().addPropertyChangeListener (l);
+        supp.addPropertyChangeListener(l);
     }
 
     /**
@@ -510,7 +529,7 @@ public class CljEditorContextImpl extends EditorContext {
      * @param l the listener to remove
      */
     public void removePropertyChangeListener(PropertyChangeListener l) {
-        proxy().removePropertyChangeListener (l);
+        supp.removePropertyChangeListener(l);
     }
 
     /**
