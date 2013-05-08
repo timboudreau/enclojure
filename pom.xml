@@ -13,7 +13,7 @@
         <brandingToken>enclojure</brandingToken>
         <clojure.contrib.snapshot.tag/>
         <clojure.snapshot.tag/>
-        <clojure.version>1.2.1</clojure.version>
+        <clojure.version>1.2.0</clojure.version>
         <clojure.contrib.version>1.2.0</clojure.contrib.version>
         <enclojure.version.dev>1.5</enclojure.version.dev>
         <enclojure.version.release>1.5</enclojure.version.release>
