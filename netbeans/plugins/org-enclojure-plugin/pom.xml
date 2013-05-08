@@ -20,7 +20,7 @@
         <netbeans.release>RELEASE73</netbeans.release>
         <brandingToken>enclojure</brandingToken>
         <enclojure.version.dev>1.0-SNAPSHOT</enclojure.version.dev>
-        <enclojure.version.release>1.4</enclojure.version.release>
+        <enclojure.version.release>1.5</enclojure.version.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <clojure.version>1.2.0</clojure.version>

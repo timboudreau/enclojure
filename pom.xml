@@ -8,7 +8,7 @@ d">
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <netbeans.release>RELEASE69</netbeans.release>
         <brandingToken>enclojure</brandingToken>
-        <enclojure.version.dev>1.0-SNAPSHOT</enclojure.version.dev>
+        <enclojure.version.dev>1.5</enclojure.version.dev>
         <enclojure.version.release>1.5</enclojure.version.release>
     </properties>
     <modelVersion>4.0.0</modelVersion>
