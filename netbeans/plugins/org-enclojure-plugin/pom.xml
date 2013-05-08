@@ -1,21 +1,22 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.enclojure</groupId>
     <artifactId>org-enclojure-plugin</artifactId>
     <packaging>nbm</packaging>
-    <version>1.5</version>
+    <version>1.6</version>
     <description>Enclojure plugin for Clojure development for NB 7.3</description>
     <name>Enclojure Clojure Plugin for NB 7.3</name>
     <parent>
         <groupId>org.enclojure</groupId>
         <artifactId>nb-enclojure-app</artifactId>
         <relativePath>../../../pom.xml</relativePath>
-        <version>1.5</version>
+        <version>1.6</version>
     </parent>
     <properties>
-        <clojure.snapshot.tag></clojure.snapshot.tag>
-        <clojure.contrib.snapshot.tag></clojure.contrib.snapshot.tag>
+        <clojure.snapshot.tag/>
+        <clojure.contrib.snapshot.tag/>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <netbeans.release>RELEASE73</netbeans.release>
         <brandingToken>enclojure</brandingToken>
@@ -26,9 +27,9 @@
         <clojure.version>1.2.0</clojure.version>
         <templates.basedir>${basdir}../../../templates</templates.basedir>
         <project.templates.source>${templates.basedir}/netbeans/ProjectTemplates</project.templates.source>
-        <project.templates.dest></project.templates.dest>
+        <project.templates.dest/>
         <sample.projects.source>${templates.basedir}/netbeans/SampleProjects</sample.projects.source>
-        <sample.projects.dest></sample.projects.dest>
+        <sample.projects.dest/>
         <netbeans.release>RELEASE73</netbeans.release>
     </properties>
 
@@ -765,7 +766,7 @@
               <!-- optional -->
               <arguments>
                 <argument>-cp</argument>
-                <classpath />
+                <classpath/>
                 <argument>clojure.main</argument>
                 <argument>${basedir}/scripts/zip_projects.clj</argument>
               </arguments>
