@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http//www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0                              http://maven.apache.org/maven-v4_0_0.xs d">
-    <properties>
-        <clojure.version>1.2.0</clojure.version>
-        <clojure.snapshot.tag/>
-        <clojure.contrib.snapshot.tag/>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <netbeans.release>RELEASE73</netbeans.release>
-        <netbeans.version>RELEASE73</netbeans.version>
-        <brandingToken>enclojure</brandingToken>
-        <enclojure.version.dev>1.5</enclojure.version.dev>
-        <enclojure.version.release>1.5</enclojure.version.release>
-    </properties>
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.enclojure</groupId>
     <artifactId>nb-enclojure-app</artifactId>
@@ -120,4 +109,21 @@
         <module>org-enclojure-ide</module>
         <module>netbeans/plugins/org-enclojure-plugin</module>
     </modules>
+    <properties>
+        <brandingToken>enclojure</brandingToken>
+        <clojure.contrib.snapshot.tag/>
+        <clojure.snapshot.tag/>
+        <clojure.version>1.2.0</clojure.version>
+        <enclojure.version.dev>1.5</enclojure.version.dev>
+        <enclojure.version.release>1.5</enclojure.version.release>
+        <netbeans.release>RELEASE73</netbeans.release>
+        <netbeans.version>RELEASE73</netbeans.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <project.templates.dest/>
+        <project.templates.source>${templates.basedir}/netbeans/ProjectTemplates</project.templates.source>
+        <sample.projects.dest/>
+        <sample.projects.source>${templates.basedir}/netbeans/SampleProjects</sample.projects.source>
+        <templates.basedir>${basdir}../../../templates</templates.basedir>
+    </properties>
 </project>

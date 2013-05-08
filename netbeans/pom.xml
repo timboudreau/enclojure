@@ -46,8 +46,4 @@
         <module>plugins/org-enclojure-plugin</module>
         <module>Netbeans 6.8</module>
     </modules>
-    <properties>
-        <netbeans.release>RELEASE68</netbeans.release>
-        <brandingToken>netbeans68enclojure</brandingToken>
-    </properties>
 </project>
