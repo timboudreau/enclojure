@@ -9,6 +9,14 @@ Builds are available [on timboudreau.com](http://timboudreau.com/builds/job/Encl
 Big Honkin' Caveats
 -------------------
 
+### Update 8/14:
+The caveats below still apply, **plus**:
+
+ * Project depends on [https://github.com/technomancy/swank-clojure](Swank-Clojure) for its REPL, which is unmaintains and recommends using [CIDER](https://github.com/clojure-emacs/cider) instead
+ * The embedded version of Clojure is 1.2.0, while Clojure is up to 1.6.0;  it uses `clojure-contrib` which has not existed since 1.2.0, and has since been split apart into multiple libraries - someone needs to determine which are actually needed and include only those.
+
+### Older Caveats:
+
 This module cannot coexist with NetBeans Hibernate support, due to a conflict
 over SLF4J.  So, disable hibernate before you try to use this module. This is probably
 solvable, but would probably require changes in NetBeans Hibernate module to split
