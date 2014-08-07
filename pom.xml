@@ -17,8 +17,8 @@
         <clojure.contrib.version>1.2.0</clojure.contrib.version>
         <enclojure.version.dev>1.5</enclojure.version.dev>
         <enclojure.version.release>1.5</enclojure.version.release>
-        <netbeans.release>RELEASE73</netbeans.release>
-        <netbeans.version>RELEASE73</netbeans.version>
+        <netbeans.release>RELEASE80</netbeans.release>
+        <netbeans.version>RELEASE80</netbeans.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <project.templates.dest/>

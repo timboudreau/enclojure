@@ -12,8 +12,12 @@ Big Honkin' Caveats
 ### Update 8/14:
 The caveats below still apply, **plus**:
 
- * Project depends on [https://github.com/technomancy/swank-clojure](Swank-Clojure) for its REPL, which is unmaintains and recommends using [CIDER](https://github.com/clojure-emacs/cider) instead
+ * Project depends on [https://github.com/technomancy/swank-clojure](Swank-Clojure) for its REPL, which is unmaintained; its website recommends using [CIDER](https://github.com/clojure-emacs/cider) instead
  * The embedded version of Clojure is 1.2.0, while Clojure is up to 1.6.0;  it uses `clojure-contrib` which has not existed since 1.2.0, and has since been split apart into multiple libraries - someone needs to determine which are actually needed and include only those.
+ * The project is not compilable against versions of Clojure newer than 1.2.0
+
+The module *will* work with NetBeans 8.0 + Clojure 1.2.0 (a copy of Clojure is included in the module), 
+but you *must* disable the Hibernate NetBeans plugin first.
 
 ### Older Caveats:
 
