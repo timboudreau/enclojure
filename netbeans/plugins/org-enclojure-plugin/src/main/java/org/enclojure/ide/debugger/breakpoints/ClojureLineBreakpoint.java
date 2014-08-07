@@ -48,7 +48,6 @@
 */
 package org.enclojure.ide.debugger.breakpoints;
 
-import com.sun.tools.doclets.internal.toolkit.util.SourcePath;
 import org.netbeans.api.debugger.*;
 import org.netbeans.api.debugger.jpda.*;
 
@@ -57,6 +56,7 @@ import org.openide.util.NbBundle;
 
 import org.enclojure.ide.core.LogAdapter;
 import java.util.logging.Level;
+import org.enclojure.ide.debugger.SourcePath;
 
 public class ClojureLineBreakpoint extends Breakpoint {
 
