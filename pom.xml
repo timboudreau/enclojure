@@ -11,10 +11,8 @@
     <packaging>pom</packaging>
     <properties>
         <brandingToken>enclojure</brandingToken>
-        <clojure.contrib.snapshot.tag/>
         <clojure.snapshot.tag/>
         <clojure.version>1.2.1</clojure.version>
-        <clojure.contrib.version>1.2.0</clojure.contrib.version>
         <enclojure.version.dev>1.5</enclojure.version.dev>
         <enclojure.version.release>1.5</enclojure.version.release>
         <netbeans.release>RELEASE80</netbeans.release>
@@ -43,19 +41,11 @@
                     <groupId>org.clojure</groupId>
                     <artifactId>clojure</artifactId>
                 </exclusion>
-                <exclusion>
-                    <groupId>org.clojure</groupId>
-                    <artifactId>clojure-contrib</artifactId>
-                </exclusion>
             </exclusions>
         </dependency>
         <dependency>
             <groupId>org.clojure</groupId>
             <artifactId>clojure</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.clojure</groupId>
-            <artifactId>clojure-contrib</artifactId>
         </dependency>
     </dependencies>
     <repositories>
@@ -163,11 +153,6 @@
                 <groupId>org.clojure</groupId>
                 <artifactId>clojure</artifactId>
                 <version>${clojure.version}${clojure.snapshot.tag}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.clojure</groupId>
-                <artifactId>clojure-contrib</artifactId>
-                <version>${clojure.contrib.version}${clojure.contrib.snapshot.tag}</version>
             </dependency>
             <dependency>
                 <groupId>org.enclojure</groupId>

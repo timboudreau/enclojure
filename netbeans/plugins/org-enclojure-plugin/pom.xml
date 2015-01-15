@@ -23,10 +23,6 @@
                     <groupId>org.clojure</groupId>
                     <artifactId>clojure</artifactId>
                 </exclusion>
-                <exclusion>
-                    <groupId>org.clojure</groupId>
-                    <artifactId>clojure-contrib</artifactId>
-                </exclusion>
             </exclusions>
         </dependency>
         <dependency>
@@ -39,10 +35,6 @@
         <dependency>
             <groupId>org.clojure</groupId>
             <artifactId>clojure</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.clojure</groupId>
-            <artifactId>clojure-contrib</artifactId>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
@@ -647,7 +639,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>nbm-maven-plugin</artifactId>
-                <version>3.10</version>
+                <version>3.14</version>
                 <extensions>true</extensions>
                 <configuration>
                     <descriptor>src/main/nbm/module.xml</descriptor>
@@ -707,7 +699,7 @@
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>nbm-maven-plugin</artifactId>
-                        <version>3.10</version>
+                        <version>3.14</version>
                         <executions>
                             <execution>
                                 <id>extra</id>

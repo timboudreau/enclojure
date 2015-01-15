@@ -55,22 +55,17 @@
 (defn- verify-classpath
   [classpath]
   (if-let [{[clojure clojure-exists?] :clojure
-            [clojure-contrib contrib-exists?] :contrib}
+            }
             (repl-manager/bad-classpath? classpath)]
     (.notify (DialogDisplayer/getDefault)
       (NotifyDescriptor$Confirmation.
         (str
-        "There did not appear to be both valid clojure and clojure-contrib jars present in the classpath.  "
+        "There did not appear to a valid clojure jar present in the classpath.  "
           "For clojure.jar => " (if clojure (format "\"%s\"" clojure) " no reference to a clojure jar found in classpath.")
             (when clojure (if clojure-exists? " possibly valid clojure file." " file not found."))
-          "\nFor clojure-contrib.jar => " (if clojure-contrib
-                                    (format "\"%s\"" clojure-contrib)
-                                    " no reference to a clojure-contrib jar found in classpath.")
-            (when clojure-contrib (if contrib-exists?
-                                    " passibly valid clojure-contrib file." " file not found."))
-          "\nThese are both required to start a repl."
-          "\nFor a project REPL, you can add them as libraries to the project."
-          "\nFor the stand-alone REPL, go to the Enclojure category in the Netbeans preferences and make sure they are both present in the selected platform."
+          "\nThis is required to start a repl."
+          "\nFor a project REPL, you can add it as a library to the project."
+          "\nFor the stand-alone REPL, go to the Enclojure category in the Netbeans preferences and make sure it is present in the selected platform."
           "\nAre you sure you want to continue?")
         "Possible problem with classpath for the REPL"
         NotifyDescriptor/YES_NO_OPTION
@@ -78,11 +73,11 @@
           )) 0))
 
 (defn verify-classpath-use-default
-  "Checks to see if there is a clojure and clojure-contrib jar in the classpath.
+  "Checks to see if there is a clojure jar in the classpath.
 If not, allows the user to add the default platform to the classpath of their project"
   [classpath]
   (if-let [{[clojure clojure-exists?] :clojure
-            [clojure-contrib contrib-exists?] :contrib}
+            }
             (repl-manager/bad-classpath? classpath)]
     (let [_ (platform-options/load-preferences)
           default-platform (platform-options/get-default-platform)]
@@ -90,15 +85,10 @@ If not, allows the user to add the default platform to the classpath of their pr
             (.notify (DialogDisplayer/getDefault)
               (NotifyDescriptor$Confirmation.
                 (str
-                "There did not appear to be both valid clojure and clojure-contrib jars present in the classpath.  "
+                "There did not appear to a valid clojure jar present in the classpath.  "
                   "For clojure.jar => " (if clojure (format "\"%s\"" clojure) " no reference to a clojure jar found in classpath.")
                     (when clojure (if clojure-exists? " possibly valid clojure file." " file not found."))
-                  "\nFor clojure-contrib.jar => " (if clojure-contrib
-                                            (format "\"%s\"" clojure-contrib)
-                                            " no reference to a clojure-contrib jar found in classpath.")
-                    (when clojure-contrib (if contrib-exists?
-                                            " passibly valid clojure-contrib file." " file not found."))
-                  "\nThese are both required to start a repl."
+                  "\nThis is required to start a repl."
                   (format "\nDo you want to use the default platform \"%s\" ?" (:name default-platform)))
                 "Possible problem with classpath for the REPL"
                 NotifyDescriptor/YES_NO_OPTION
@@ -180,7 +170,7 @@ If not, allows the user to add the default platform to the classpath of their pr
       (error-reporting/report-error        
         (format "Error starting REPL %s using host %s with port %s. Make sure
 the JVM you are connecting to has the Enclojure repl-server running and has
-the clojure.jar and clojure-contrib.jars in the classpath. Also check your host
+the clojure.jar in the classpath. Also check your host
 and port settings." repl-id) e)))))
 
 
@@ -232,7 +222,7 @@ and port settings." repl-id) e)))))
     (catch Exception e
       (error-reporting/report-error        
         (str "Stand alone repl failed to start.  Make sure you have Clojure
-and Clojure.contrib jars in assigned Clojure Platform for the standalone REPL.
+jar in assigned Clojure Platform for the standalone REPL.
 See the Enclojure category under preferences to view your settings"
           (.getMessage e)) e))))
 
@@ -349,7 +339,7 @@ with java launcher."
     (catch Exception e
       (error-reporting/report-error        
         (str (format "Project REPL for %s failed to start.  Make sure you have Clojure
-and Clojure.contrib jars as libraries in your project." repl-id) 
+ as a library in your project." repl-id) 
           "\nThese are both required to start a repl."
           "\nFor a project REPL, you can add them as libraries to the project.\n"
           (.getMessage e))

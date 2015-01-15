@@ -38,8 +38,8 @@
        "}
   org.enclojure.repl.main
   (:refer-clojure :exclude (with-bindings))
-  (:use clojure.contrib.pprint)
-  (:require [clojure.contrib.pprint :as pprint]
+  (:use clojure.pprint)
+  (:require [clojure.pprint :as pprint]
     [clojure.main :exclude (with-binding)])
   (:import (java.net Socket ServerSocket)
     (java.util.logging Level Logger)
