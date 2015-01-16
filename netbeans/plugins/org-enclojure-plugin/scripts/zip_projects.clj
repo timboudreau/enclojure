@@ -1,7 +1,6 @@
 (ns build.zip-projects
  (:require
-   [clojure.contrib.duck-streams :as duck-streams]
-   [clojure.contrib.java-utils :as java-utils]
+   [clojure.java.io :as io]
    [org.enclojure.commons.c-slf4j :as logger]
    [org.enclojure.repl.main :as repl.main]
    )
@@ -30,7 +29,7 @@
 
 (defn get-directories [path]
   (filter #(.isDirectory %) 
-    (vec (.listFiles (java-utils/file path)))))
+    (vec (.listFiles (io/file path)))))
 
 (defn process-completed [exit-value]
   (println  "Process terminated: {}" exit-value))
@@ -80,12 +79,12 @@
 
 (defn zip-files [target-path    
                  src-base-dir]  
-  (let [name (.getName (java-utils/file src-base-dir))
+  (let [name (.getName (io/file src-base-dir))
         full-target (File. (str target-path "/" name)
                       (str name ".zip"))]    
   (when (.exists full-target)    
     (.delete full-target))
-  (.mkdirs (java-utils/file (str target-path "/" name)))  
+  (.mkdirs (io/file (str target-path "/" name)))  
   (zip-dir full-target src-base-dir)))
 
 (defn zip-it [target-path src-base-dir]

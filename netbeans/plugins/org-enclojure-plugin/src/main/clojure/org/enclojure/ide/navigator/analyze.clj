@@ -22,7 +22,6 @@
     clojure.inspector clojure.set
     )
   (:require
-    [clojure.contrib.repl-utils :as ru]
     [org.enclojure.ide.nb.editor.utils :as editor-utils]
     [org.enclojure.commons.c-slf4j :as logger]
     )

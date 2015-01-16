@@ -11,8 +11,6 @@
 )
 
 (ns org.enclojure.ide.analyze
-  (:require [clojure.contrib.repl-utils :as ru]
-    )
   (:import (java.io File LineNumberReader InputStreamReader PushbackReader)
     (java.lang.reflect Modifier Method Constructor)
     (clojure.lang RT Compiler Compiler$C)))
