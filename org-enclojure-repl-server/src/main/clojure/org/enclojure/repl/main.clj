@@ -112,10 +112,10 @@
         piped-in (clojure.lang.LineNumberingPushbackReader. (PipedReader. cmd-wtr))
         piped-out (PrintWriter. (PipedWriter. result-rdr))
         repl-thread-fn #(binding [;*print-base* *print-base* Not in 1.0
-                                  *print-circle* *print-circle*
+                                  ;*print-circle* *print-circle*
                                   *print-length* *print-length*
                                   *print-level* *print-level*
-                                  *print-lines* *print-lines*  
+                                  ;*print-lines* *print-lines*  
                                   *print-miser-width* *print-miser-width*
                                   ;*print-radix* *print-radix* Not in 1.0
                                   *print-right-margin* *print-right-margin*

@@ -58,10 +58,10 @@
          [
         'jvmAdditionArgsTextField "-Xms512m -Xmx512m" :jvm-additional-args
        ; 'printBaseTextField  10   'clojure.pprint/*print-base*
-        'printCircleCheckBox false 'clojure.pprint/*print-circle*
+       ; 'printCircleCheckBox false 'clojure.pprint/*print-circle*
         'printLengthTextField  40 'clojure.core/*print-length*
         'printLevelTextField  4 'clojure.core/*print-level*
-        'printLinesTextField 25 'clojure.pprint/*print-lines*
+        ;'printLinesTextField 25 'clojure.pprint/*print-lines*
         'printMiserWidthTextField 40 'clojure.pprint/*print-miser-width*
         ;'printRadixCheckBox false 'clojure.pprint/*print-radix*
         'printRightMarginTextField  78 'clojure.pprint/*print-right-margin*
